@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Comfortaa", ui-sans-serif, system-ui, sans-serif;
+  --color-milky: #fffdfa;
+  --color-pink-soft: #ffb6c1;
+  --color-pink-light: #ffe4e1;
+  --color-pink-dark: #ff69b4;
+}
+
+body {
+  background-color: var(--color-milky);
+  color: #333;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling and animations */
+html {
+  scroll-behavior: smooth;
+}
+
+.tab-content-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.tab-content-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms ease-out, transform 400ms ease-out;
+}
+.tab-content-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.tab-content-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms ease-in, transform 300ms ease-in;
+}
